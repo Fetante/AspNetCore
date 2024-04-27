@@ -1,6 +1,6 @@
 ﻿<header>
     <div class="container">
-       <a id="logo" href="/home"><img src="images/Silicon-Light.svg" alt=""/></a>
+        <a id="logo" asp-controller="Home" asp-action="SignUp"><img src="~/images/Silicon-Light.svg" alt="" /></a>
 
        <div id="menu">
            <nav>
@@ -20,8 +20,8 @@
        </div>
 
        <div class="account-buttons">
-           <a class="btn-gray" href="#"><i class="fa-regular fa-right-to-bracket"></i><span>Sign In</span></a>
-           <a class="btn-theme" href="#"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
+            <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-right-to-bracket"></i><span>Sign In</span></a>
+            <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
        </div>
 
     </div>
