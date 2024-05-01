@@ -1,5 +1,5 @@
 form {
-    width 100%;
+    width: 100%;
     display: grid;
 
     .input-group {
@@ -21,6 +21,16 @@ form {
         label {
             margin: 0;
             font-weight: 400;
+        }
+
+        span {
+            &.field-validation-error {
+                position: absolute;
+                top: 0;
+                right: 0;
+                @include text-s;
+                color: $danger;
+            }
         }
     }
 
@@ -58,4 +68,3 @@ form {
         }
     }
 }
-
