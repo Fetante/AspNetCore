@@ -23,4 +23,32 @@ public class AuthController : Controller
         return RedirectToAction("SignIn", "Auth"); // Redirecta till signin om allt är ok
 
     }
+
+    [Route("/signin")] // Använd routen /signup till vyn Auth/SignUp
+    [HttpGet]
+    public IActionResult SignIn()
+    {
+        var viewModel = new SignInViewModel();
+        return View(viewModel);
+    }
+
+    [Route("/signin")]
+    [HttpPost]
+    public IActionResult SignIn(SignInViewModel viewModel)
+    {
+        if (!ModelState.IsValid)         
+            return View(viewModel);
+
+        // var result = _authService.SignIn(viewModel.Form);
+        // if (result)
+        //    return RedirectToAction("Account", "Index");
+
+
+        viewModel.ErrorMessage = "Email or password invalid";
+        return View(viewModel);
+
+
+
+
+    }
 }
