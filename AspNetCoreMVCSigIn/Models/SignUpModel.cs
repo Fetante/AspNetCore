@@ -6,15 +6,18 @@ public class SignUpModel
 {
     [Display(Name = "First name", Prompt = "Enter your first name", Order = 0)]
     [Required(ErrorMessage = "Invalid first name")]
+    [MinLength(2, ErrorMessage ="Enter a first name")]
     public string FirstName { get; set; } = null!;
 
     [Display(Name = "Last name", Prompt = "Enter your last name", Order = 1)]
     [Required(ErrorMessage = "Invalid last name")]
+    [MinLength(2, ErrorMessage = "Enter a last name")]
     public string LastName { get; set; } = null!;
 
     [DataType(DataType.EmailAddress)]
     [Display(Name = "Email address", Prompt = "Enter your email address", Order = 2)]
-    [Required(ErrorMessage = "Invalid email address")]
+    [Required(ErrorMessage = "Email address is required")]
+    [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Invalid email address")]
     public string Email { get; set; } = null!;
 
     [DataType(DataType.Password)]
